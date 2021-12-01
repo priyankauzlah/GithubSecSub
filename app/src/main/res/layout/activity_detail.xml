@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ClDetail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_light"
+    tools:context=".domain.view.detail.dashboard.DetailActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/IvDetail"
+        android:layout_width="@dimen/_150dp"
+        android:layout_height="@dimen/_150dp"
+        android:layout_marginTop="@dimen/_15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CvDetails"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_160dp"
+        android:layout_margin="@dimen/_15dp"
+        app:cardCornerRadius="@dimen/_10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IvDetail">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/TvNameDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:layout_marginEnd="@dimen/_24dp"
+                android:gravity="center"
+                android:text="@string/name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_30sp" />
+
+            <TextView
+                android:id="@+id/TvUsernameDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TvNameDetail"
+                android:layout_alignStart="@+id/TvNameDetail"
+                android:layout_alignEnd="@+id/TvNameDetail"
+                android:layout_marginTop="@dimen/_4dp"
+                android:gravity="center"
+                android:text="@string/username"
+                android:textSize="@dimen/_18sp" />
+
+            <TextView
+                android:id="@+id/TvCompanyDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TvUsernameDetail"
+                android:layout_alignStart="@+id/TvUsernameDetail"
+                android:layout_alignEnd="@+id/TvUsernameDetail"
+                android:layout_marginTop="7dp"
+                android:text="@string/company" />
+
+            <TextView
+                android:id="@+id/TvLocationDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TvCompanyDetail"
+                android:layout_alignStart="@+id/TvCompanyDetail"
+                android:layout_alignEnd="@id/TvCompanyDetail"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="@dimen/_7dp"
+                android:text="@string/location" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ProgressBar
+        android:id="@+id/PbDetail"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/IvErrorDetail"
+        android:contentDescription="@string/image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/page_error" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/TlDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_24dp"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_marginRight="@dimen/_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/CvDetails"
+        app:tabGravity="fill"
+        app:tabIndicatorHeight="@dimen/_5dp"
+        app:tabMaxWidth="0dp"
+        app:tabMode="fixed" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/Vp_detail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TlDetail" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/CiItemUser"
+        android:layout_width="@dimen/_70dp"
+        android:layout_height="@dimen/_70dp"
+        android:layout_marginStart="@dimen/_30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/TvItemUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20dp"
+        android:text="@string/username"
+        android:textSize="@dimen/_25sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/CiItemUser"
+        app:layout_constraintTop_toTopOf="@id/CiItemUser" />
+
+    <TextView
+        android:id="@+id/TvItemType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20dp"
+        android:text="@string/type"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sp"
+        style="@style/textLight"
+        app:layout_constraintBottom_toBottomOf="@id/CiItemUser"
+        app:layout_constraintStart_toEndOf="@id/CiItemUser"
+        app:layout_constraintTop_toBottomOf="@+id/TvItemUsername" />
+</androidx.constraintlayout.widget.ConstraintLayout>
